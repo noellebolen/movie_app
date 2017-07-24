@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Movie Events</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Park</th>
+      <th>Movie</th>
+      <th>Date</th>
+      <th>Time</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @movie_events.each do |movie_event| %>
+      <tr>
+        <td><%= movie_event.park_id %></td>
+        <td><%= movie_event.movie_id %></td>
+        <td><%= movie_event.date %></td>
+        <td><%= movie_event.time %></td>
+        <td><%= link_to 'Show', movie_event %></td>
+        <td><%= link_to 'Edit', edit_movie_event_path(movie_event) %></td>
+        <td><%= link_to 'Destroy', movie_event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Movie Event', new_movie_event_path %>

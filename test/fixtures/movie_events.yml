@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  park_id: 1
+  movie_id: 1
+  date: MyString
+  time: 1
+
+two:
+  park_id: 1
+  movie_id: 1
+  date: MyString
+  time: 1
