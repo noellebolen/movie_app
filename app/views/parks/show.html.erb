@@ -6,18 +6,15 @@
 </p>
 
 <p>
-  <strong>Location:</strong>
-  <%= @park.location %>
-</p>
-
-<p>
   <strong>Neighborhood:</strong>
   <%= @park.neighborhood %>
 </p>
 
 <p>
-  <strong>Park url:</strong>
-  <%= @park.park_url %>
+  <strong>Movie Event</strong>
+  <%= @movies.each do |movie| %>
+  <%= movie.name %> + "," <%= movie.rating %>
+  <% end %>
 </p>
 
 <%= link_to 'Edit', edit_park_path(@park) %> |

@@ -10,6 +10,8 @@ class ParksController < ApplicationController
   # GET /parks/1
   # GET /parks/1.json
   def show
+    @park = Park.find(params[:id])
+    @movies = @park.movies
   end
 
   # GET /parks/new
@@ -69,6 +71,6 @@ class ParksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def park_params
-      params.require(:park).permit(:name, :location, :neighborhood, :park_url)
+      params.require(:park).permit(:name, :lat, :long, :neighborhood, :park_url)
     end
 end

@@ -10,15 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170724150530) do
+ActiveRecord::Schema.define(version: 20170803195327) do
+
+  create_table "movie_events", force: :cascade do |t|
+    t.integer "park_id"
+    t.integer "movie_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.datetime "datetime"
+  end
+
+  create_table "movies", force: :cascade do |t|
+    t.string "name"
+    t.string "rating"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "parks", force: :cascade do |t|
     t.string "name"
-    t.integer "location"
     t.string "neighborhood"
     t.string "park_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "lat"
+    t.float "long"
   end
 
 end
