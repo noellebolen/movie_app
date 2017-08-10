@@ -2,23 +2,21 @@
 
 <p>
   <strong>Park:</strong>
-  <%= @movie_event.park_id %>
+  <%= @park.name %>
 </p>
 
 <p>
   <strong>Movie:</strong>
-  <%= @movie_event.movie_id %>
+  <%= @movies.each do |m| %>
+  <%= m.name. %>
+  <% end %>
 </p>
 
 <p>
   <strong>Date:</strong>
-  <%= @movie_event.date %>
+  <%= @movie_event.datetime %>
 </p>
 
-<p>
-  <strong>Time:</strong>
-  <%= @movie_event.time %>
-</p>
 
 <%= link_to 'Edit', edit_movie_event_path(@movie_event) %> |
 <%= link_to 'Back', movie_events_path %>
