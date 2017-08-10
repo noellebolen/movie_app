@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @park.name %>
+</p>
+
+<p>
+  <strong>Neighborhood:</strong>
+  <%= @park.neighborhood %>
+</p>
+
+<p>
+  <strong>Movie Event</strong>
+  <%= @movies.each do |movie| %>
+  <%= movie.name %> + "," <%= movie.rating %>
+  <% end %>
+</p>
+
+<%= link_to 'Edit', edit_park_path(@park) %> |
+<%= link_to 'Back', parks_path %>
