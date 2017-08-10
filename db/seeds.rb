@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+<<<<<<< HEAD
 require 'date'
 
 
@@ -89,4 +90,5 @@ p4.movies << [m1..m13]
 p5.movies << [m1..m12]
 p6.movies << [m1, m7, m12]
 p7.movies << [m14..m25]
-p8.movies << [m1..m13]
+
+
