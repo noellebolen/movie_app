@@ -12,6 +12,8 @@ class ParksController < ApplicationController
   def show
     @park = Park.find(params[:id])
     @movies = @park.movies
+
+    @movie_events = MovieEvent.where(park_id: @park.id)
   end
 
   # GET /parks/new

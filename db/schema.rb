@@ -10,14 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170803195327) do
+ActiveRecord::Schema.define(version: 20170724191214) do
 
   create_table "movie_events", force: :cascade do |t|
     t.integer "park_id"
     t.integer "movie_id"
+    t.datetime "datetime"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.datetime "datetime"
+    t.index ["movie_id"], name: "index_movie_events_on_movie_id"
+    t.index ["park_id"], name: "index_movie_events_on_park_id"
   end
 
   create_table "movies", force: :cascade do |t|
@@ -31,10 +33,11 @@ ActiveRecord::Schema.define(version: 20170803195327) do
     t.string "name"
     t.string "neighborhood"
     t.string "park_url"
+    t.string "image_link"
+    t.float "latitude"
+    t.float "longitude"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.float "lat"
-    t.float "long"
   end
 
 end
