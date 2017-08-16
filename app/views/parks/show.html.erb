@@ -12,8 +12,11 @@
 
 <p>
   <strong>Movie Event</strong>
-  <%= @movies.each do |movie| %>
-  <%= movie.name %> + "," <%= movie.rating %>
+  <% @movies.each do |movie| %>
+  <p><%= movie.name %>, <%= movie.rating %></p>
+  <% end %>
+  <% @movie_events.each do |event| %>
+  <p><%= event.datetime.strftime('%B %e at %l:%M %p') %></p>
   <% end %>
 </p>
 
