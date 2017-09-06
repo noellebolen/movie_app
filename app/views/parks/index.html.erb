@@ -2,19 +2,23 @@
 
 <div class="space">
   <div class="container">
-    <div class ="header">
-      <h1>Pittsburgh Summer Movies in the Park</h1>
+    <div class="header">
+      <h1>Cinema in the Park</h1>
 
-      <p>Welcome to Pittsburgh Summer Movies in the Park!  Bring your family, a blanket, and lay back and relax at dusk to enjoy your favorite family movies under the stars!</p>
-     </div> 
+      <div class="subheader">
+        <p>Welcome to Pittsburgh Summer Movies in the Park!  Bring your family, a blanket, and lay back and relax at dusk to enjoy your favorite family movies under the stars!</p>
+      </div>
+    </div> 
   </div>
 </div>
 
-<% @parks.each do |park| %>
 <div class="grid">
-	<div><%= link_to image_tag park.image_link %>
-		 <h2><%= park.name %></h2>
+<% @parks.each do |park| %>
+	<div>
+	<%= image_tag park.image_link %>
+ 		<h2><%= park.name %></h2>
 		 <h3><%= park.neighborhood %></h3>
-	</div>
-</div>
+     <%= link_to "Find Movie Showtimes", park_path(park) %>
+	</div>	
 <% end %>
+</div>

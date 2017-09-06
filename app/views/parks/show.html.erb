@@ -1,24 +1,28 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @park.name %>
-</p>
+<div class="grid1">
+  <%= image_tag @park.image_link %>
+</div>
 
-<p>
+
+<h3>
+  <strong>Park:</strong>
+  <%= @park.name %>
+</h3>
+
+<h4>
   <strong>Neighborhood:</strong>
   <%= @park.neighborhood %>
-</p>
+</h4>
 
 <p>
-  <strong>Movie Event</strong>
-  <% @movies.each do |movie| %>
-  <p><%= movie.name %>, <%= movie.rating %></p>
-  <% end %>
-  <% @movie_events.each do |event| %>
-  <p><%= event.datetime.strftime('%B %e at %l:%M %p') %></p>
-  <% end %>
+  <strong>Movie Event and Showtimes</strong>
+  <div>
+    <% @movies.each do |movie| %>
+        <p><%= movie.name %> , <%= movie.rating %> , <% movie.movie_events.each do |event| %>
+        <%= event.datetime.strftime("at %D") %></p>
+      <% end %>
+    <% end %>
+  </div>
 </p>
 
-<%= link_to 'Edit', edit_park_path(@park) %> |
-<%= link_to 'Back', parks_path %>

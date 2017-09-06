@@ -4,10 +4,26 @@
 
 * {box-sizing: border-box;}
 
+a { 
+  color: white;
+  &:visited {
+  color: white;
+  }
+  &:hover, &:focus {
+  color: yellow;  
+  }  
+}
+
 body {
 	color: blue;
 	font-family: "Georgia", serif;
 	background: #F0F8FF;
+}
+
+.container {
+  margin: 0 auto 0;
+  width: 960px;
+  padding: 60px;
 }
 
 .space {
@@ -15,25 +31,56 @@ body {
   background-size: cover;
   height: 500px;
   width: 100%;
-}
-
-.container {
-  margin: 0 auto 0;
-  width: 960px;
-}
-
-.header {
-	color: white;
-	font-size: 26px;
-	position: fixed;
-  	text-align: center;
-  	width: 100%;
-}
+  }
 
 .grid {
-  display: grid;
-  grid-template-columns: 200px 200 px 200px;
-  grid-template-rows: 200px 200px 200px;
-  grid-gap: 40px;
+
+  div {
+    border: 1px solid rgb(0, 95, 107);
+    border-radius: 3px;
+    background-color: rgba(0, 95, 107, 0.8);
+    padding: 1em;
+    color: #fff;
+  }
 }
 
+@media screen and (min-width: 900px) {
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: .25fr .25fr minmax(300px, 310px);
+    grid-gap: 75px;
+    padding: 60px;
+  }
+
+  .grid1 {
+    display: grid;
+    width: 200px;
+    grid-template-columns: 1fr;
+    grid-template-rows: .25fr;
+    grid-gap: 75px;
+    padding: 60px;
+  }
+  
+  .header {
+  color: white;
+  font-size: 40px;
+  line-height: 70px;
+  width: 100%;
+  }
+}
+
+.subheader {
+  color: white;
+  font-size: 80px;
+  padding: 50px;
+  width: 100%;
+}
+
+.grid img {
+  width: 100%;
+}
+
+.moviecontainer {
+  
+}

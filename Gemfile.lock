@@ -85,6 +85,7 @@ GEM
       mini_portile2 (~> 2.2.0)
     pg (0.20.0)
     pg (0.20.0-x86-mingw32)
+    pgreset (0.1.1)
     puma (3.9.1)
     rack (2.0.3)
     rack-test (0.6.3)
@@ -174,6 +175,7 @@ DEPENDENCIES
   jquery-rails (= 4.3.1)
   listen (= 3.0.8)
   pg (= 0.20.0)
+  pgreset
   puma (= 3.9.1)
   rails (= 5.1.2)
   sass-rails (= 5.0.6)
