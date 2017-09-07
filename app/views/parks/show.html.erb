@@ -4,16 +4,21 @@
   <%= image_tag @park.image_link %>
 </div>
 
+  <h3>
+    <strong>Park:</strong>
+    <%= @park.name %>
+  </h3>
 
-<h3>
-  <strong>Park:</strong>
-  <%= @park.name %>
-</h3>
+  <h4>
+    <strong>Neighborhood:</strong>
+    <%= @park.neighborhood %>
+  </h4>
 
-<h4>
-  <strong>Neighborhood:</strong>
-  <%= @park.neighborhood %>
-</h4>
+    <div class="movieheader">
+      <h2>
+      <strong>Movie Showtimes</strong>
+      </h2>
+    </div>
 
 <p>
   <strong>Movie Event and Showtimes</strong>
@@ -25,6 +30,6 @@
       <%= movie_event.datetime.strftime("at %D") %></p>
     <% end %>
   <% end %>
-  </div>
+</div>
 
 

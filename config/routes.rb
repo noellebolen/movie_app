@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
  
   
-  get '/movie_events/:id' => 'movie_events#show', as: :movie_event
+  get '/parks/:id' => 'parks#show', as: :park
 	resources :parks, only: [:index, :show]
 		
 	

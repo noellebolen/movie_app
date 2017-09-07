@@ -12,8 +12,10 @@ class ParksController < ApplicationController
   def show
     @park = Park.find(params[:id])
     @movies = @park.movies
-    @movie_events = MovieEvent.where(park_id: params[:id])
+    @movie = Movie.find(params[:id])
+    @movie_events = MovieEvent.where(park_id: params[:id], movie_id: params[:id])
 
+    
     require 'uri'
     require 'net/http'
 

@@ -10,12 +10,12 @@ a {
   color: white;
   }
   &:hover, &:focus {
-  color: yellow;  
+  color: dimgrey;  
   }  
 }
 
 body {
-	color: blue;
+	color: #800000;
 	font-family: "Georgia", serif;
 	background: #F0F8FF;
 }
@@ -41,6 +41,11 @@ body {
     background-color: rgba(0, 95, 107, 0.8);
     padding: 1em;
     color: #fff;
+
+    movie & {
+      grid-template-rows: minmax(200px, 300px);
+      background-color: black;
+    }
   }
 }
 
@@ -75,6 +80,10 @@ body {
   font-size: 80px;
   padding: 50px;
   width: 100%;
+
+  .movieheader & {
+    color: blue;
+  }
 }
 
 .grid img {
@@ -82,5 +91,6 @@ body {
 }
 
 .moviecontainer {
-  
+  color: black;
+
 }
