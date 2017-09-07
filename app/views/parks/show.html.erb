@@ -17,12 +17,14 @@
 
 <p>
   <strong>Movie Event and Showtimes</strong>
-  <div>
-    <% @movies.each do |movie| %>
-        <p><%= movie.name %> , <%= movie.rating %> , <% movie.movie_events.each do |event| %>
-        <%= event.datetime.strftime("at %D") %></p>
-      <% end %>
+<div>
+  <% @movies.each do |movie| %>
+    <%= movie.name %> , <%= movie.rating %>
+
+    <% movie.movie_events.select{|movie_event|movie_event.park.id == @park.id}.each do |movie_event| %>
+      <%= movie_event.datetime.strftime("at %D") %></p>
     <% end %>
+  <% end %>
   </div>
-</p>
+
 
