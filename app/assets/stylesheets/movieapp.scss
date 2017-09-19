@@ -53,7 +53,7 @@ body {
   .grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: .25fr .25fr minmax(300px, 310px);
+    grid-template-rows: .25fr .25fr minmax(310px, 350px);
     grid-gap: 75px;
     padding: 60px;
   }

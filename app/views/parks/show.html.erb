@@ -27,9 +27,13 @@
     <%= movie.name %> , <%= movie.rating %>
 
     <% movie.movie_events.select{|movie_event|movie_event.park.id == @park.id}.each do |movie_event| %>
-      <%= movie_event.datetime.strftime("at %D") %></p>
+      <%= movie_event.datetime.strftime("on %D") %>
+      <% movie.movie_events.select{|movie|movie.park.id == @movie.id}.each do |movie| %>
+      <%= movie.response %>
+      <% end %>  
     <% end %>
   <% end %>
+</p>
 </div>
 
 

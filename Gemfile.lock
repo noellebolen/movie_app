@@ -84,7 +84,6 @@ GEM
     nokogiri (1.8.0-x86-mingw32)
       mini_portile2 (~> 2.2.0)
     pg (0.20.0)
-    pg (0.20.0-x86-mingw32)
     pgreset (0.1.1)
     puma (3.9.1)
     rack (2.0.3)
