@@ -12,8 +12,24 @@ class ParksController < ApplicationController
   def show
     @park = Park.find(params[:id])
     @movies = @park.movies
+    @movie = Movie.find(params[:id])
+    @movie_events = MovieEvent.where(park_id: params[:id], movie_id: params[:id])
 
-    @movie_events = MovieEvent.where(park_id: @park.id)
+    
+    require 'uri'
+    require 'net/http'
+
+    url = URI("https://api.themoviedb.org/3/configuration?api_key=feb440596767b82e73112b66f54d1c4d")
+
+    http = Net::HTTP.new(url.host, url.port)
+    http.use_ssl = true
+    http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+
+    request = Net::HTTP::Get.new(url)
+    request.body = "{}"
+
+    response = http.request(request)
+    puts response.read_body
   end
 
   # GET /parks/new
@@ -73,6 +89,6 @@ class ParksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def park_params
-      params.require(:park).permit(:name, :lat, :long, :neighborhood, :park_url)
+      params.require(:park).permit(:name, :latitude, :longitude, :neighborhood, :park_url, :image_link)
     end
 end

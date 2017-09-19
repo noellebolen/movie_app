@@ -1,0 +1,96 @@
+// Place all the styles related to the Parks controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+* {box-sizing: border-box;}
+
+a { 
+  color: white;
+  &:visited {
+  color: white;
+  }
+  &:hover, &:focus {
+  color: dimgrey;  
+  }  
+}
+
+body {
+	color: #800000;
+	font-family: "Georgia", serif;
+	background: #F0F8FF;
+}
+
+.container {
+  margin: 0 auto 0;
+  width: 960px;
+  padding: 60px;
+}
+
+.space {
+  background: url('https://static.pexels.com/photos/340901/pexels-photo-340901.jpeg');
+  background-size: cover;
+  height: 500px;
+  width: 100%;
+  }
+
+.grid {
+
+  div {
+    border: 1px solid rgb(0, 95, 107);
+    border-radius: 3px;
+    background-color: rgba(0, 95, 107, 0.8);
+    padding: 1em;
+    color: #fff;
+
+    movie & {
+      grid-template-rows: minmax(200px, 300px);
+      background-color: black;
+    }
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: .25fr .25fr minmax(300px, 310px);
+    grid-gap: 75px;
+    padding: 60px;
+  }
+
+  .grid1 {
+    display: grid;
+    width: 200px;
+    grid-template-columns: 1fr;
+    grid-template-rows: .25fr;
+    grid-gap: 75px;
+    padding: 60px;
+  }
+  
+  .header {
+  color: white;
+  font-size: 40px;
+  line-height: 70px;
+  width: 100%;
+  }
+}
+
+.subheader {
+  color: white;
+  font-size: 80px;
+  padding: 50px;
+  width: 100%;
+
+  .movieheader & {
+    color: blue;
+  }
+}
+
+.grid img {
+  width: 100%;
+}
+
+.moviecontainer {
+  color: black;
+
+}
