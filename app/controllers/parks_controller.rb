@@ -30,6 +30,7 @@ class ParksController < ApplicationController
 
     response = http.request(request)
     puts response.read_body
+    puts response
   end
 
   # GET /parks/new

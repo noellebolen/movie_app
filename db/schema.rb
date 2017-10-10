@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170724191214) do
+ActiveRecord::Schema.define(version: 20171003172056) do
 
   create_table "movie_events", force: :cascade do |t|
     t.integer "park_id"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20170724191214) do
     t.string "rating"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "imdb_id"
   end
 
   create_table "parks", force: :cascade do |t|

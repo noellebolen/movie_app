@@ -1,39 +1,37 @@
 <p id="notice"><%= notice %></p>
 
-<div class="grid1">
-  <%= image_tag @park.image_link %>
+<div class="container2">
+  <h6><%= @park.name %> - 
+      <%= @park.neighborhood %></h6>
+</div>
 </div>
 
-  <h3>
-    <strong>Park:</strong>
-    <%= @park.name %>
-  </h3>
-
-  <h4>
-    <strong>Neighborhood:</strong>
-    <%= @park.neighborhood %>
-  </h4>
-
-    <div class="movieheader">
-      <h2>
+    <div class="sub3">
+      <h3>
       <strong>Movie Showtimes</strong>
-      </h2>
+      <h3>
     </div>
 
-<p>
-  <strong>Movie Event and Showtimes</strong>
-<div>
+<div class="grid">
   <% @movies.each do |movie| %>
-    <%= movie.name %> , <%= movie.rating %>
-
-    <% movie.movie_events.select{|movie_event|movie_event.park.id == @park.id}.each do |movie_event| %>
-      <%= movie_event.datetime.strftime("on %D") %>
-      <% movie.movie_events.select{|movie|movie.park.id == @movie.id}.each do |movie| %>
-      <%= movie.response %>
-      <% end %>  
-    <% end %>
+  <div>
+    <div class="date">
+      <% movie.movie_events.select{|movie_event|movie_event.park.id == @park.id}.each do |movie_event| %>
+      <%= movie_event.datetime.strftime("%D") %>
+    </div>
+    
+    <div>
+      <%= image_tag movie.imdb_id %> 
+      <div class="movietitle">
+        <%= movie.name %> , <%= movie.rating %>
+      </div>
+      <% end %>
+    </div>
+  </div>
   <% end %>
-</p>
 </div>
+
+</p>
+
 
 

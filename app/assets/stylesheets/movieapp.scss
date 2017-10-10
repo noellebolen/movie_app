@@ -7,15 +7,15 @@
 a { 
   color: white;
   &:visited {
-  color: white;
-  }
+    color: white;
+    }
   &:hover, &:focus {
-  color: dimgrey;  
-  }  
+    color: dimgrey;  
+    }  
 }
 
 body {
-	color: #800000;
+	color: black;
 	font-family: "Georgia", serif;
 	background: #F0F8FF;
 }
@@ -24,6 +24,20 @@ body {
   margin: 0 auto 0;
   width: 960px;
   padding: 60px;
+}
+
+.container2 {
+  background-color: #6699ff;
+  background-size: cover;
+  font-family: avantgarde, san-serif;
+  box-sizing: border-box;
+  height: 200px;
+  width: 100%;
+  padding: 60px;
+  & {
+    color: white;
+    font-size: 60px;
+  }
 }
 
 .space {
@@ -42,8 +56,9 @@ body {
     padding: 1em;
     color: #fff;
 
-    movie & {
-      grid-template-rows: minmax(200px, 300px);
+    &.movie {
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: .25fr .25fr minmax(310px, 350px);
       background-color: black;
     }
   }
@@ -60,9 +75,9 @@ body {
 
   .grid1 {
     display: grid;
-    width: 200px;
-    grid-template-columns: 1fr;
-    grid-template-rows: .25fr;
+    width: 100px;
+    grid-template-columns: 100px;
+    grid-template-rows: 100px;
     grid-gap: 75px;
     padding: 60px;
   }
@@ -75,20 +90,31 @@ body {
   }
 }
 
+.movietitle {
+  text-align: center;
+}
+
+.date {
+  font-size: 20px;
+  color: white;
+}
+
 .subheader {
   color: white;
   font-size: 80px;
   padding: 50px;
   width: 100%;
 
-  .movieheader & {
-    color: blue;
+  &.sub3 {
+    color: black;
+    padding: 100px;
   }
 }
 
-.grid img {
-  width: 100%;
-}
+  .movieheader {
+    color: blue;
+  }
+
 
 .moviecontainer {
   color: black;
